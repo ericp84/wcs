@@ -1,1 +1,66 @@
-GET http://localhost:3000
+### get all wilders
+GET http://localhost:3000/api/wilders
+
+### get one wilders
+
+GET http://localhost:3000/api/wilders/127
+
+### create wilder
+
+POST http://localhost:3000/api/wilders/create
+Content-Type: application/json
+
+{
+    "name": "eric"
+}
+
+### delete all wilders
+
+DELETE http://localhost:3000/api/wilders/delete
+
+### update one wilder
+
+PUT http://localhost:3000/api/wilders/update/126
+
+### delete one wilder
+
+DELETE http://localhost:3000/api/wilders/deleteone/143
+
+### skills ###
+
+### get all skills
+GET http://localhost:3000/api/skills
+
+### get one skill
+
+GET http://localhost:3000/api/skills/4
+
+### create a skill
+
+POST http://localhost:3000/api/skills/create
+Content-Type: application/json
+
+{
+    "name": "golang"
+}
+
+### delete all skills
+
+DELETE http://localhost:3000/api/skills/delete
+
+### update one skill (just in case of error)
+
+PUT http://localhost:3000/api/skills/update/2
+
+### delete a skill
+
+DELETE http://localhost:3000/api/skills/deleteone/2
+
+### add skills ###
+
+POST http://localhost:3000/api/wilderskills/144
+Content-Type: application/json
+
+{
+    "name": "javascript"
+}
