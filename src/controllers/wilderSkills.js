@@ -8,10 +8,12 @@ module.exports = {
             const addWilderSkill = await dataSource
                 .getRepository(wilders)
                 .findOneBy({ id: req.params.id });
+
             const addSkill = await dataSource
                 .getRepository(skills)
                 .findOneBy({ name: req.body.name });
             addWilderSkill.skills = [ ...addWilderSkill.skills, addSkill];
+
             await dataSource
                 .getRepository(wilders)
                 .save(addWilderSkill);

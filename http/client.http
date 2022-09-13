@@ -3,7 +3,7 @@ GET http://localhost:3000/api/wilders
 
 ### get one wilders
 
-GET http://localhost:3000/api/wilders/135
+GET http://localhost:3000/api/wilders/144
 
 ### create wilder
 
@@ -41,7 +41,7 @@ POST http://localhost:3000/api/skills/create
 Content-Type: application/json
 
 {
-    "name": "golang"
+    "name": "JAVA"
 }
 
 ### delete all skills
