@@ -5,10 +5,16 @@ const wilders = require("../entity/wilders");
 module.exports = {
     wilderSkill: async (req, res) => {
         try {
-            const addWilderSkill = await dataSource.getRepository(wilders).findOneBy({ id: req.params.id });
-            const addSkill = await dataSource.getRepository(skills).findOneBy({ name: req.body.name });
+            const addWilderSkill = await dataSource
+                .getRepository(wilders)
+                .findOneBy({ id: req.params.id });
+            const addSkill = await dataSource
+                .getRepository(skills)
+                .findOneBy({ name: req.body.name });
             addWilderSkill.skills = [ ...addWilderSkill.skills, addSkill];
-            await dataSource.getRepository(wilders).save(addWilderSkill);
+            await dataSource
+                .getRepository(wilders)
+                .save(addWilderSkill);
             res.status(200).json({ addWilderSkill });    
         } catch(error) {
             res.status(404).json({ message: "sorry can't do that" })

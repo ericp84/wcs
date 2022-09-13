@@ -4,7 +4,9 @@ const skills = require("../entity/skills");
 module.exports = {
     create: async (req, res) => {
         try {
-            const data = await dataSource.getRepository(skills).save(req.body);
+            const data = await dataSource
+                .getRepository(skills)
+                .save(req.body);
             res.status(200).json(data);    
         } catch(error) {
             res.status(404).json({ message: "sorry can't do that" })
@@ -13,7 +15,9 @@ module.exports = {
 
     findAll: async (req, res) => {
         try {
-            const data = await dataSource.getRepository(skills).find();
+            const data = await dataSource
+                .getRepository(skills)
+                .find();
             res.status(200).json(data);    
         } catch(error) {
             res.status(404).json({ message: "sorry can't do that" })
@@ -22,7 +26,9 @@ module.exports = {
 
     find: async (req, res) => {
         try {
-            const data = await dataSource.getRepository(skills).findOneBy({ id: req.params.id });
+            const data = await dataSource
+                .getRepository(skills)
+                .findOneBy({ id: req.params.id });
             res.status(200).json(data);    
         } catch(error) {
             res.status(404).json({ message: "sorry can't do that" })
@@ -31,7 +37,13 @@ module.exports = {
 
     update: async (req, res) => {
         try {
-            const data = await dataSource.getRepository(skills).createQueryBuilder().update(skills).set({ name: "updated skills"}).where("id = :id", { id: req.params.id }).execute();
+            const data = await dataSource
+                .getRepository(skills)
+                .createQueryBuilder()
+                .update(skills)
+                .set({ name: "updated skills"})
+                .where("id = :id", { id: req.params.id })
+                .execute();
             res.status(200).json(data);    
         } catch(error) {
             res.status(404).json({ message: "sorry can't do that" })
@@ -40,7 +52,12 @@ module.exports = {
 
     delete: async (req, res) => {
         try {
-            const data = await dataSource.getRepository(skills).createQueryBuilder().delete('*').from(skills).execute()
+            const data = await dataSource
+                .getRepository(skills)
+                .createQueryBuilder()
+                .delete('*')
+                .from(skills)
+                .execute()
             res.status(200).json(data);    
         } catch(error) {
             res.status(404).json({ message: "sorry can't do that" })
@@ -49,7 +66,12 @@ module.exports = {
 
     deleteone: async (req, res) => {
         try {
-            const data = dataSource.getRepository(skills).createQueryBuilder().delete(skills).where("id = :id", { id: req.params.id }).execute();
+            const data = dataSource
+                .getRepository(skills)
+                .createQueryBuilder()
+                .delete(skills)
+                .where("id = :id", { id: req.params.id })
+                .execute();
             res.status(200).json(data);    
         } catch(error) {
             res.status(404).json({ message: "sorry can't do that" })
