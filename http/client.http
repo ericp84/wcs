@@ -20,7 +20,7 @@ DELETE http://localhost:3000/api/wilders/delete
 
 ### update one wilder
 
-PUT http://localhost:3000/api/wilders/update/126
+PUT http://localhost:3000/api/wilders/update/138
 
 ### delete one wilder
 
@@ -41,7 +41,7 @@ POST http://localhost:3000/api/skills/create
 Content-Type: application/json
 
 {
-    "name": "JAVA"
+    "name": "FLUTTER"
 }
 
 ### delete all skills
@@ -58,9 +58,9 @@ DELETE http://localhost:3000/api/skills/deleteone/2
 
 ### add skills ###
 
-POST http://localhost:3000/api/wilderskills/144
+POST http://localhost:3000/api/wilderskills/145
 Content-Type: application/json
 
 {
-    "name": "javascript"
+    "name": "JAVA"
 }
