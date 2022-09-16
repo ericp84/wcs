@@ -25,10 +25,11 @@ module.exports = {
     },
 
     find: async (req, res) => {
+        const skillId = req.params.skillId;
         try {
             const data = await dataSource
                 .getRepository(skills)
-                .findOneBy({ id: req.params.id });
+                .findOneBy({ id: skillId });
             res.status(200).json(data);    
         } catch(error) {
             res.status(404).json({ message: "sorry can't do that" })
@@ -36,13 +37,14 @@ module.exports = {
     },
 
     update: async (req, res) => {
+        const skillId = req.params.skillId;
         try {
             const data = await dataSource
                 .getRepository(skills)
                 .createQueryBuilder()
                 .update(skills)
                 .set({ name: "updated skills"})
-                .where("id = :id", { id: req.params.id })
+                .where("id = :id", { id: skillId })
                 .execute();
             res.status(200).json(data);    
         } catch(error) {
@@ -65,12 +67,13 @@ module.exports = {
     },
 
     deleteone: async (req, res) => {
+        const skillId = req.params.skillId;
         try {
             const data = dataSource
                 .getRepository(skills)
                 .createQueryBuilder()
                 .delete(skills)
-                .where("id = :id", { id: req.params.id })
+                .where("id = :id", { id: skillId })
                 .execute();
             res.status(200).json(data);    
         } catch(error) {

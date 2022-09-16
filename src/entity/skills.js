@@ -13,4 +13,12 @@ module.exports = new EntitySchema({
             unique: true,
         },
     },
+    relations: {
+        upvotes: {
+          type: "one-to-many",
+          createForeignKeyConstraints: false,
+          inverseSide: "skill",
+          target: "Upvote",
+        },
+      },
 });

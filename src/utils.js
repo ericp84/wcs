@@ -6,7 +6,8 @@ const dataSource = new typeorm.DataSource({
     synchronize: true,
     entities: [
         require("./entity/wilders"), 
-        require("./entity/skills")
+        require("./entity/skills"),
+        require("./entity/Upvote"),
     ],
     logging: ["query", "error"]
 });

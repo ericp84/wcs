@@ -1,0 +1,29 @@
+### skills ###
+
+### get all skills
+GET http://localhost:3000/api/skills
+
+### get one skill
+
+GET http://localhost:3000/api/skills/4
+
+### create a skill
+
+POST http://localhost:3000/api/skills/create
+Content-Type: application/json
+
+{
+    "name": "JAVA"
+}
+
+### delete all skills
+
+DELETE http://localhost:3000/api/skills/delete
+
+### update one skill (just in case of error)
+
+PUT http://localhost:3000/api/skills/update/2
+
+### delete a skill
+
+DELETE http://localhost:3000/api/skills/deleteone/2

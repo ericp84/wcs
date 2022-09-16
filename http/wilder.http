@@ -1,0 +1,38 @@
+### get all wilders
+GET http://localhost:3000/api/wilders
+
+### get one wilders
+
+GET http://localhost:3000/api/wilders/144
+
+### create wilder
+
+POST http://localhost:3000/api/wilders/create
+Content-Type: application/json
+
+{
+    "name": "eric",
+    "city": "sorgues"
+}
+
+### delete all wilders
+
+DELETE http://localhost:3000/api/wilders/delete
+
+### update one wilder
+
+PUT http://localhost:3000/api/wilders/update/138
+
+### delete one wilder
+
+DELETE http://localhost:3000/api/wilders/deleteone/1
+
+
+### add skills ###
+
+POST http://localhost:3000/api/wilderskills/1
+Content-Type: application/json
+
+{
+    "name": "JAVASCRIPT"
+}
