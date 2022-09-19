@@ -18,7 +18,8 @@ module.exports = new EntitySchema({
     relations: {
         upvotes: {
           type: "one-to-many",
-          createForeignKeyConstraints: false,
+          onDelete: "CASCADE",
+        //   createForeignKeyConstraints: false,
           inverseSide: "wilder",
           target: "Upvote",
         },

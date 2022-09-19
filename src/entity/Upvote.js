@@ -23,13 +23,15 @@ const UpvoteEntity = new EntitySchema({
   relations: {
     wilder: {
       type: "many-to-one",
-      createForeignKeyConstraints: false,
+      onDelete: "CASCADE",
+    //   createForeignKeyConstraints: false,
       inverseSide: "upvotes",
       target: "Wilder",
     },
     skill: {
       type: "many-to-one",
-      createForeignKeyConstraints: false,
+      onDelete: "CASCADE",
+    //   createForeignKeyConstraints: false,
       inverseSide: "upvotes",
       target: "Skill",
     },

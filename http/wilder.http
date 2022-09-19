@@ -34,5 +34,5 @@ POST http://localhost:3000/api/wilderskills/1
 Content-Type: application/json
 
 {
-    "name": "JAVASCRIPT"
+    "name": "PHP"
 }
